@@ -21,6 +21,9 @@ int main(int argc, char* argv[]) {
         while (parser.parse(word)) {
             storage.addWord(word);
         }
+        if (!word.empty()) {
+            storage.addWord(word);
+        }
     }
     FileWriter writer(argv[2]);
     writer.write(storage.getWordStat());
