@@ -13,8 +13,8 @@ private:
 
 public:
     Parser(string buf);
-    bool parse(string& word);
-
+    string getNextWord();
+    bool hasNextWord();
 };
 
 

@@ -18,7 +18,8 @@ private:
 public:
     FileReader(const string& fileName);
     ~FileReader();
-    bool readToBuff(string& buff);
+    string getNextLine();
+    bool hasNextLine();
 };
 
 #endif //TASK_0_2_FILEREADER_H

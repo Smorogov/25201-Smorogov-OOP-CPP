@@ -13,20 +13,22 @@ int main(int argc, char* argv[]) {
         return 1;
     }
     FileReader reader(argv[1]);
-    string buf;
     Storage storage;
-    while (reader.readToBuff(buf)) {
+    while (reader.hasNextLine()) {
+        string buf = reader.getNextLine();
         Parser parser(buf);
-        string word;
-        while (parser.parse(word)) {
-            storage.addWord(word);
-        }
-        if (!word.empty()) {
+        while (parser.hasNextWord()) {
+            string word = parser.getNextWord();
             storage.addWord(word);
         }
     }
+    auto wordStats = storage.getWordStat();
+    vector<string> stats;
+    for (auto& word : wordStats) {
+        stats.push_back(word.toString());
+    }
     FileWriter writer(argv[2]);
-    writer.write(storage.getWordStat());
+    writer.write(stats);
 
     return 0;
 }

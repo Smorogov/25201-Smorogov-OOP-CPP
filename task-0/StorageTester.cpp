@@ -48,3 +48,17 @@ TEST(StorageTester, Fourth) {
     auto stat = storage.getWordStat();
     ASSERT_EQ(stat.size(), 0);
 }
+
+TEST(StorageTester, Fifth) {
+    Storage storage(false);
+    string words[] = {"hello", "WORLD", "WoRLd", "WorlD", "HELLO"};
+    for (auto word : words) {
+        storage.addWord(word);
+    }
+
+    auto stat = storage.getWordStat();
+    ASSERT_EQ(stat[0].word, "world");
+    ASSERT_EQ(stat[1].word, "hello");
+    ASSERT_EQ(stat[0].count, 3);
+    ASSERT_EQ(stat[1].count, 2);
+}

@@ -13,5 +13,6 @@ struct WordStat {
     double share;
 
     WordStat(string word, int count, double share);
+    string toString() const;
 };
 #endif //TASK_0_2_WORDSTAT_H

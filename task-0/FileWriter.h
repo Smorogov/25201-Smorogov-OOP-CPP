@@ -13,8 +13,6 @@ using std::vector;
 using std::ofstream;
 using std::string;
 
-
-
 class FileWriter {
 private:
     string fileName;
@@ -23,7 +21,7 @@ private:
 public:
     FileWriter(const string& fileName);
     ~FileWriter();
-    void write(const vector<WordStat>& sorted);
+    void write(const vector<string> &text);
 };
 
 #endif //TASK_0_2_FILEWRITER_H

@@ -16,8 +16,13 @@ FileReader::~FileReader() {
     this->inputFile.close();
 }
 
-bool FileReader::readToBuff(string& buff){
-    getline(inputFile, buff);
+string FileReader::getNextLine(){
+    string line;
+    getline(inputFile, line);
+    return line;
+}
+
+bool FileReader::hasNextLine() {
     return !inputFile.eof();
 }
 

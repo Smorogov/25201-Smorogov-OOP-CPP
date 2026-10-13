@@ -1,13 +1,21 @@
 #include "Storage.h"
 #include <sstream>
 #include <algorithm>
+#include <cctype>
 using std::sort;
+using std::tolower;
 
 void Storage::addWord(const string &word) {
-    if (statisticMap.find(word) == statisticMap.end()) {
-        statisticMap[word] = 0;
+    string w = word;
+    if (!caseSensitive) {
+        for (char& c : w) {
+            c = tolower(c);
+        }
     }
-    statisticMap[word]++;
+    if (statisticMap.find(w) == statisticMap.end()) {
+        statisticMap[w] = 0;
+    }
+    statisticMap[w]++;
 }
 
 ///Получение общего количества слов
@@ -17,6 +25,10 @@ int Storage::getWordCount() const {
         count += pair.second;
     }
     return count;
+}
+
+Storage::Storage(bool caseSensitive) {
+    this->caseSensitive = caseSensitive;
 }
 
 /// Получение статистики по словам

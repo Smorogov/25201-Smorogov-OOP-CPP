@@ -15,8 +15,8 @@ FileWriter::~FileWriter() {
     this->outputFile.close();
 }
 
-void FileWriter::write(const vector<WordStat>& sorted) {
-    for (const WordStat& word : sorted) {
-        this->outputFile << word.word << ',' << word.count << ',' << word.share << '%' << endl ;
+void FileWriter::write(const vector<string> &text) {
+    for (const string& word : text) {
+        this->outputFile << word << endl;
     }
 }

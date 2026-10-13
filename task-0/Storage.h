@@ -14,10 +14,12 @@ using std::string;
 
 class Storage {
 private:
+    bool caseSensitive;
     map<string, int> statisticMap;
     int getWordCount() const;
 
 public:
+    Storage(bool caseSensitive = true);
     void addWord(const string& word);
     vector<WordStat> getWordStat() const;
 };
