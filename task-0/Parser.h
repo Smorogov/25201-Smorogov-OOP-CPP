@@ -13,6 +13,8 @@ private:
 
 public:
     Parser(string buf);
+    /// Разбивает строчку на слова
+    /// @return слово
     string getNextWord();
     bool hasNextWord();
 };

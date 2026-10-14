@@ -18,7 +18,6 @@ void Storage::addWord(const string &word) {
     statisticMap[w]++;
 }
 
-///Получение общего количества слов
 int Storage::getWordCount() const {
     int count = 0;
     for (const auto &pair: statisticMap) {
@@ -31,8 +30,6 @@ Storage::Storage(bool caseSensitive) {
     this->caseSensitive = caseSensitive;
 }
 
-/// Получение статистики по словам
-/// @return вектор статистик слов (WordStat), отсортированный по убыванию частоты
 vector<WordStat> Storage::getWordStat() const {
     int totalCount = getWordCount();
     vector<WordStat> wordStats;

@@ -19,8 +19,7 @@ Parser::Parser(string buf) {
     this->buf = buf.substr(firstWord);
 }
 
-/// Разбивает строчку на слова
-/// @return слово
+
 string Parser::getNextWord() {
     string word;
     for (int i = 0; i < buf.length(); i++) {
