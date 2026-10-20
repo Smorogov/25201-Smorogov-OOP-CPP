@@ -5,7 +5,9 @@
 #include "Storage.h"
 #include "Parser.h"
 
-using namespace std;
+using std::cout;
+using std::string;
+using std::vector;
 
 int main(int argc, char* argv[]) {
     if (argc != 3) {
