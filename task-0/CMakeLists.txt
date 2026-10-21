@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(task_0 main.cpp
         FileReader.cpp
         FileReader.h
-        FileWriter.cpp
-        FileWriter.h
+        CSVWriter.cpp
+        CSVWriter.h
         Storage.cpp
         Storage.h
         WordStat.cpp

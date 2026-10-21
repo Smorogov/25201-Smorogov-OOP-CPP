@@ -13,14 +13,14 @@ using std::vector;
 using std::ofstream;
 using std::string;
 
-class FileWriter {
+class CSVWriter {
 private:
     string fileName;
     ofstream outputFile;
 
 public:
-    FileWriter(const string& fileName);
-    ~FileWriter();
+    CSVWriter(const string& fileName);
+    ~CSVWriter();
     void write(const vector<string> &text);
 };
 

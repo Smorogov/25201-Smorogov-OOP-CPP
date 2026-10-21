@@ -5,7 +5,9 @@
 #ifndef TASK_0_2_WORDSTAT_H
 #define TASK_0_2_WORDSTAT_H
 #include <string>
+#include <vector>
 using std::string;
+using std::vector;
 
 struct WordStat {
     string word;
@@ -13,6 +15,6 @@ struct WordStat {
     double share;
 
     WordStat(string word, int count, double share);
-    string toString() const;
+    vector<string> toLine();
 };
 #endif //TASK_0_2_WORDSTAT_H

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "FileWriter.h"
+#include "CSVWriter.h"
 #include "FileReader.h"
 #include "Storage.h"
 #include "Parser.h"
@@ -25,12 +25,11 @@ int main(int argc, char* argv[]) {
         }
     }
     auto wordStats = storage.getWordStat();
-    vector<string> stats;
+    CSVWriter writer(argv[2]);
     for (auto& word : wordStats) {
-        stats.push_back(word.toString());
+        writer.write(word.toLine());
     }
-    FileWriter writer(argv[2]);
-    writer.write(stats);
+
 
     return 0;
 }
